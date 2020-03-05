@@ -1,0 +1,49 @@
+
+monolog:
+    level: INFO
+    format: "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n"
+    datetime: null
+    allowLineBreaks: false
+    ignoreEmptyContextAndExtra: false
+
+twig:
+    cache: true
+    debug: false
+    autoReload: true
+
+phpmailer:
+    debug: false
+    host: smtp.host.de
+    port: 587
+    auth: true
+    encryption: tls
+    username: need2configure
+    password: need2configure
+    from:
+        mail: need2configure
+        name: need2configure
+    subject:
+        new: Sell-Hive Password Mail
+        remind: Sell-Hive Password Reminder
+        limitRequest: Sell-Hive Limit Request
+
+common:
+    baseUrl: need2configure
+
+cashpoint:
+    secret: need2configure
+
+item:
+    feeInCent: 50
+
+seller:
+    limit:
+        maxStep: 300
+        autoAccept: 10
+        initTill: 2020-02-16
+        secret: need2configure
+
+admin:
+    active: false
+    password: need2configure
+    mail: need2configure

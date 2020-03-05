@@ -1,0 +1,20 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+# lines below this comment are managed by gradle
+RedirectMatch 403 /.htaccess$
+RedirectMatch 403 /.htaccess.tmp$
+RedirectMatch 403 /composer.json$
+RedirectMatch 403 /composer.lock$
+RedirectMatch 403 /config.dist.yaml$
+RedirectMatch 403 /config.yaml$
+RedirectMatch 403 /controller/.*$
+RedirectMatch 403 /entities/.*$
+RedirectMatch 403 /propel/.*$
+RedirectMatch 403 /SellHiveApp.php$
+RedirectMatch 403 /services/.*$
+RedirectMatch 403 /templates/.*$
+RedirectMatch 403 /vendor/.*$

@@ -1,0 +1,31 @@
+{% autoescape %}Hallo {{ seller.name }},
+vielen Dank für Deine Anmeldung.
+
+Mit dieser Registrierung bekommst Du Deinen persönlichen Login zu unserem online Anmeldesystem für Verkäufer auf dem Flohmarkt der Bremer Spiele-Tage.
+
+Wichtig: Alle Spiele, die auf dem Flohmarkt der Bremer Spiele-Tage verkauft werden sollen, müssen in der Datenbank eingegeben sein, sonst können sie von der Kasse nicht erfasst werden. Das gilt auch für Kleinmengen.
+
+Dein aktuelles Kontingent beträgt {{ seller.limit.current }} Spiele.
+{% if seller.limit.till %}
+Es ist bis zum {{ seller.limit.till|date('d.m.Y') }} gültig, danach wird das Limit auf die Zahl der aktuell eingetragenen Spiele reduziert.
+{% endif %}
+{% if seller.limit.requested > seller.limit.current %}
+Sobald Dein Kontingentwunsch ({{ seller.limit.requested }}) bearbeitet wurde, wirst du benachrichtigt.
+{% endif %}
+
+Viel Spaß beim Eingeben der Spiele!
+
+Verkäufer-Nummer: {{ seller.id }}
+
+**********************
+Login Name: {{ seller.mail }}
+Passwort: {{ seller.password }}
+**********************
+
+Bei Fragen kannst Du auf diese E-Mail antworten oder an spiele@vhs-bremen.de schreiben.
+Wir bitten um Verständnis, dass das Postfach nur einmal am Tag bearbeitet wird.
+
+
+Viele Grüße,
+Dein Bremer Spiele-Tage Team
+{% endautoescape %}
